@@ -7,6 +7,11 @@ import javax.persistence.Id;
 
 @Entity
 public class Note {
+
+    public Note() {
+
+    }
+
     public Note(Integer id, String title, String body) {
         this.id = id;
         this.title = title;
@@ -14,7 +19,7 @@ public class Note {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String title;

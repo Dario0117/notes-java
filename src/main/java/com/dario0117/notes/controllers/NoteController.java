@@ -12,7 +12,7 @@ public class NoteController {
     private NoteService noteService;
 
     @PostMapping
-    public Note create(Note note) {
+    public Note create(@RequestBody Note note) {
         return noteService.save(note);
     }
 
