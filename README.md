@@ -15,15 +15,15 @@ user {
 ```
 ---
 ## Rutas
-- `/register` :
+- `auth/register` :
     - `POST`: Recibe `name, email, password` y rear un usuario
-- `/login` :
+- `auth/login` :
     - `POST`: Recibe `email, password` y devuelve el token para la autenticación
 
 ## Estas rutas necesitan el token de autenticación
 Para enviar el toquen a las siguientes rutas se edebe agregar el header `Authorization` y su valor debe ser `bearer TOKEN`, donde `TOKEN` es el obtenido en la ruta `/login`.
 
-- `/profile`:
+- `auth/profile`:
     - `GET`: Devuelve el `name, email`
     - `PATCH`: Recibe `name, email, password` y actualiza al usuario
 
