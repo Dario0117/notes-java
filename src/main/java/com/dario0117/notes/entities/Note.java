@@ -22,6 +22,8 @@ public class Note {
     private String title;
     @Lob
     private String body;
+    @ManyToOne
+    private User owner;
 
     public Integer getId() {
         return id;
@@ -45,5 +47,13 @@ public class Note {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }
