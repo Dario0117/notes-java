@@ -6,23 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/api/notes")
+@RequestMapping(value = "/notes")
 public class NoteController {
     @Autowired
     private NoteService noteService;
 
     @PostMapping
     public Note create(@RequestBody Note note) {
-        return noteService.save(note);
+        return noteService.create(note);
     }
 
     @GetMapping
     public Iterable<Note> index() {
-        return noteService.findAll();
+        return noteService.list();
     }
 
     @GetMapping(value = "{id}")
     public Note getById(@PathVariable Integer id) {
-        return noteService.findOne(id);
+        return noteService.get(id);
     }
 }
